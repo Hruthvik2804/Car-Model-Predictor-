@@ -1,0 +1,85 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AutoVision AI architecture">
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="0" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#0F1A33"/>
+    </linearGradient>
+    <linearGradient id="layerA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12233F"/><stop offset="1" stop-color="#0E1B33"/></linearGradient>
+    <linearGradient id="cardc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E3040"/><stop offset="1" stop-color="#0A2230"/></linearGradient>
+    <linearGradient id="cardv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#242C5C"/><stop offset="1" stop-color="#1A2048"/></linearGradient>
+    <linearGradient id="cardg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0F3128"/><stop offset="1" stop-color="#0B2420"/></linearGradient>
+    <marker id="arr2" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#5B6CA8"/></marker>
+  </defs>
+
+  <rect width="1200" height="600" rx="16" fill="url(#abg)"/>
+  <rect x="1" y="1" width="1198" height="598" rx="15" fill="none" stroke="#26355C"/>
+  <text x="600" y="50" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#E2E8F0">System Architecture</text>
+  <text x="600" y="78" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#7E8DB8">Three layers: interface → recognition engine → knowledge &amp; output</text>
+
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <!-- LAYER 1: Interface -->
+    <g transform="translate(60,110)">
+      <rect width="1080" height="110" rx="14" fill="url(#layerA)" stroke="#274063"/>
+      <text x="20" y="34" fill="#67E8F9" font-size="13" font-weight="800" letter-spacing="1">LAYER 1 · INTERFACE</text>
+      <g transform="translate(20,48)">
+        <rect width="330" height="48" rx="10" fill="#0B1020" stroke="#2C3E63"/>
+        <text x="16" y="21" fill="#E2E8F0" font-size="14" font-weight="700">app.py — Streamlit dashboard</text>
+        <text x="16" y="39" fill="#8595BD" font-size="12">Upload · run · review predictions</text>
+      </g>
+      <g transform="translate(370,48)">
+        <rect width="330" height="48" rx="10" fill="#0B1020" stroke="#2C3E63"/>
+        <text x="16" y="21" fill="#E2E8F0" font-size="14" font-weight="700">Pillow — image validation</text>
+        <text x="16" y="39" fill="#8595BD" font-size="12">Decode · verify · preprocess</text>
+      </g>
+      <g transform="translate(720,48)">
+        <rect width="340" height="48" rx="10" fill="#0B1020" stroke="#2C3E63"/>
+        <text x="16" y="21" fill="#E2E8F0" font-size="14" font-weight="700">utils.py — shared helpers</text>
+        <text x="16" y="39" fill="#8595BD" font-size="12">Model loading · label parsing</text>
+      </g>
+    </g>
+
+    <!-- LAYER 2: Engine -->
+    <g transform="translate(60,270)">
+      <rect width="1080" height="150" rx="14" fill="url(#layerA)" stroke="#274063"/>
+      <text x="20" y="34" fill="#A5B4FC" font-size="13" font-weight="800" letter-spacing="1">LAYER 2 · RECOGNITION ENGINE</text>
+      <g transform="translate(20,50)">
+        <rect width="510" height="82" rx="12" fill="url(#cardg)" stroke="#1E6F53"/>
+        <text x="18" y="30" fill="#6EE7B7" font-size="15" font-weight="800">zero_shot_model.py · CLIP</text>
+        <text x="18" y="52" fill="#BDEBD8" font-size="12.5">Encodes the image and catalogue text, then</text>
+        <text x="18" y="70" fill="#BDEBD8" font-size="12.5">ranks by similarity. No training required.</text>
+      </g>
+      <g transform="translate(550,50)">
+        <rect width="510" height="82" rx="12" fill="url(#cardv)" stroke="#3A4787"/>
+        <text x="18" y="30" fill="#A5B4FC" font-size="15" font-weight="800">train.py / predict.py · MobileNetV2</text>
+        <text x="18" y="52" fill="#C7CDF2" font-size="12.5">Transfer-learned classifier on labelled</text>
+        <text x="18" y="70" fill="#C7CDF2" font-size="12.5">class folders. Optional, higher accuracy.</text>
+      </g>
+    </g>
+
+    <!-- LAYER 3: Knowledge & Output -->
+    <g transform="translate(60,470)">
+      <rect width="1080" height="110" rx="14" fill="url(#layerA)" stroke="#274063"/>
+      <text x="20" y="34" fill="#6EE7B7" font-size="13" font-weight="800" letter-spacing="1">LAYER 3 · KNOWLEDGE &amp; OUTPUT</text>
+      <g transform="translate(20,48)">
+        <rect width="330" height="48" rx="10" fill="#0B1020" stroke="#2C3E63"/>
+        <text x="16" y="21" fill="#E2E8F0" font-size="14" font-weight="700">vehicle_catalog.json</text>
+        <text x="16" y="39" fill="#8595BD" font-size="12">Make · model · year-range entries</text>
+      </g>
+      <g transform="translate(370,48)">
+        <rect width="330" height="48" rx="10" fill="#0B1020" stroke="#2C3E63"/>
+        <text x="16" y="21" fill="#E2E8F0" font-size="14" font-weight="700">models/ class_names.json</text>
+        <text x="16" y="39" fill="#8595BD" font-size="12">Trained weights + label map</text>
+      </g>
+      <g transform="translate(720,48)">
+        <rect width="340" height="48" rx="10" fill="#0B1020" stroke="#2C3E63"/>
+        <text x="16" y="21" fill="#E2E8F0" font-size="14" font-weight="700">Ranked prediction</text>
+        <text x="16" y="39" fill="#8595BD" font-size="12">Top match · alternatives · score</text>
+      </g>
+    </g>
+
+    <!-- connectors -->
+    <g stroke="#5B6CA8" stroke-width="2.2" fill="none" marker-end="url(#arr2)">
+      <path d="M600 220 V264"/>
+      <path d="M600 420 V464"/>
+    </g>
+  </g>
+</svg>

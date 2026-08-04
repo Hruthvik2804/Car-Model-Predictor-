@@ -1,0 +1,7 @@
+streamlit>=1.37
+pillow>=10.0
+numpy>=1.26,<3
+transformers>=4.44,<5
+torch>=2.2
+tensorflow>=2.16,<2.18
+matplotlib>=3.8

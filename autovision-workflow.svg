@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile all sources (syntax check)
+        run: python -m compileall app.py utils.py train.py predict.py zero_shot_model.py
+
+      - name: Run lightweight tests
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pytest -q tests/
